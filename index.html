@@ -28,7 +28,7 @@
         }
         h2 {
             font-size: 4em;
-            margin: 0 0 10px 0;
+            margin: 20px 0 10px 0; /* Further down */
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
         .white-shade {
@@ -38,9 +38,9 @@
             color: #ce93d8; /* Brighter purple to stand out more */
         }
         #meme-char {
-            width: 300px;
+            width: 250px; /* Smaller image */
             height: auto;
-            filter: blur(20px); /* A bit more blur */
+            filter: blur(25px); /* A bit more blur */
             transition: filter 0.5s ease;
             margin: 20px 0;
         }
@@ -51,7 +51,7 @@
         .tokenomics {
             font-size: 1.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-top: 20px;
+            margin-top: 10px; /* Further up */
         }
         .tokenomics ul {
             list-style: none;
@@ -60,32 +60,6 @@
         }
         .tokenomics li {
             margin: 5px 0;
-        }
-        .saying {
-            font-size: 2em; /* Bigger */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: absolute;
-            color: #e1bee7; /* Same light purple */
-        }
-        #saying1 {
-            top: 150px; /* Further down */
-            left: 200px; /* Closer to centre */
-            transform: rotate(-10deg); /* At an angle */
-        }
-        #saying2 {
-            top: 150px; /* Further down */
-            right: 200px; /* Closer to centre */
-            transform: rotate(10deg); /* At an angle */
-        }
-        #saying3 {
-            bottom: 200px; /* Further up from bottom */
-            left: 200px; /* Closer to centre */
-            transform: rotate(-15deg); /* At an angle */
-        }
-        #saying4 {
-            bottom: 200px; /* Further up from bottom */
-            right: 200px; /* Closer to centre */
-            transform: rotate(15deg); /* At an angle */
         }
         /* Improved media queries for mobile responsiveness */
         @media (max-width: 600px) {
@@ -119,8 +93,6 @@
     </style>
 </head>
 <body>
-    <div class="saying" id="saying1">TISSUE HANDS!</div>
-    <div class="saying" id="saying2">WEN BICYCLE!</div>
     <h2><span class="white-shade">MONAD MYS</span><span class="bright-shade">TERY MEME</span></h2>
     <h1>$?????</h1>
     <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
@@ -133,8 +105,6 @@
             <li>Community/Utility: 100% owned by holders</li>
         </ul>
     </div>
-    <div class="saying" id="saying3">TO THE FLOOR!</div>
-    <div class="saying" id="saying4">SLOTH IN!</div>
     
     <script>
         // Set your launch date (example: October 9, 2025, 00:00 UTC)
