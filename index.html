@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Monad MemeCoin - Launching Soon!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Luckiest Guy', cursive;
+            background-color: #6a1b9a; /* Purple like in the image */
+            color: #e1bee7; /* Light purple text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Better for mobile */
+            text-align: center;
+            position: relative; /* For positioning sayings */
+        }
+        h1 {
+            font-size: 6em;
+            margin: 0;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* 3D shadow effect */
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 4em;
+            margin: 0 0 10px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+        }
+        .white-shade {
+            color: #ffffff; /* White color */
+        }
+        .bright-shade {
+            color: #ce93d8; /* Brighter purple to stand out more */
+        }
+        #meme-char {
+            width: 300px;
+            height: auto;
+            filter: blur(20px); /* A bit more blur */
+            transition: filter 0.5s ease;
+            margin: 20px 0;
+        }
+        #reveal-text {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        .tokenomics {
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+        .tokenomics ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tokenomics li {
+            margin: 5px 0;
+        }
+        .saying {
+            font-size: 2em; /* Bigger */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: absolute;
+            color: #e1bee7; /* Same light purple */
+        }
+        #saying1 {
+            top: 150px; /* Further down */
+            left: 200px; /* Closer to centre */
+            transform: rotate(-10deg); /* At an angle */
+        }
+        #saying2 {
+            top: 150px; /* Further down */
+            right: 200px; /* Closer to centre */
+            transform: rotate(10deg); /* At an angle */
+        }
+        #saying3 {
+            bottom: 200px; /* Further up from bottom */
+            left: 200px; /* Closer to centre */
+            transform: rotate(-15deg); /* At an angle */
+        }
+        #saying4 {
+            bottom: 200px; /* Further up from bottom */
+            right: 200px; /* Closer to centre */
+            transform: rotate(15deg); /* At an angle */
+        }
+        /* Media queries for mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 4em; /* Smaller on mobile */
+            }
+            h2 {
+                font-size: 2.5em; /* Smaller on mobile */
+            }
+            #meme-char {
+                width: 200px; /* Smaller image */
+            }
+            .tokenomics {
+                font-size: 1.2em; /* Adjust text */
+            }
+            .saying {
+                font-size: 1.5em; /* Smaller sayings */
+            }
+            #saying1 {
+                top: 100px; /* Adjust positions for mobile */
+                left: 50px;
+            }
+            #saying2 {
+                top: 100px;
+                right: 50px;
+            }
+            #saying3 {
+                bottom: 150px;
+                left: 50px;
+            }
+            #saying4 {
+                bottom: 150px;
+                right: 50px;
+            }
+            #reveal-text {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="saying" id="saying1">TISSUE HANDS!</div>
+    <div class="saying" id="saying2">WEN BICYCLE!</div>
+    <h2><span class="white-shade">MONAD MYS</span><span class="bright-shade">TERY MEME</span></h2>
+    <h1>$?????</h1>
+    <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
+    <div id="reveal-text">Reveal Coming Soon!</div>
+    
+    <div class="tokenomics">
+        <ul>
+            <li>Total Supply: 1,000,000,000 tokens</li>
+            <li>Distribution/Liquidity: 90% to LP (locked forever), 10% for marketing/airdrops</li>
+            <li>Community/Utility: 100% owned by holders</li>
+        </ul>
+    </div>
+    <div class="saying" id="saying3">TO THE FLOOR!</div>
+    <div class="saying" id="saying4">SLOTH IN!</div>
+    
+    <script>
+        // Set your launch date (example: October 9, 2025, 00:00 UTC)
+        const launchDate = new Date('2025-10-09T00:00:00Z');
+        const revealTime = new Date(launchDate.getTime() - 24 * 60 * 60 * 1000); // 24 hours before
+        
+        function updateReveal() {
+            const now = new Date();
+            if (now >= revealTime) {
+                document.getElementById('meme-char').style.filter = 'blur(0px)';
+            }
+        }
+        
+        setInterval(updateReveal, 1000);
+        updateReveal(); // Initial call
+    </script>
+</body>
+</html>
