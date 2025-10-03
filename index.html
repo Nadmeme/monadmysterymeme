@@ -87,41 +87,33 @@
             right: 200px; /* Closer to centre */
             transform: rotate(15deg); /* At an angle */
         }
-        /* Media queries for mobile responsiveness */
+        /* Improved media queries for mobile responsiveness */
         @media (max-width: 600px) {
             h1 {
-                font-size: 4em; /* Smaller on mobile */
+                font-size: 3em; /* Smaller on mobile */
             }
             h2 {
-                font-size: 2.5em; /* Smaller on mobile */
+                font-size: 2em; /* Smaller on mobile */
             }
             #meme-char {
-                width: 200px; /* Smaller image */
+                width: 150px; /* Smaller image to fit better */
             }
             .tokenomics {
-                font-size: 1.2em; /* Adjust text */
-            }
-            .saying {
-                font-size: 1.5em; /* Smaller sayings */
-            }
-            #saying1 {
-                top: 100px; /* Adjust positions for mobile */
-                left: 50px;
-            }
-            #saying2 {
-                top: 100px;
-                right: 50px;
-            }
-            #saying3 {
-                bottom: 150px;
-                left: 50px;
-            }
-            #saying4 {
-                bottom: 150px;
-                right: 50px;
+                font-size: 1em; /* Adjust text */
             }
             #reveal-text {
-                font-size: 1.2em;
+                font-size: 1em;
+            }
+            .saying {
+                position: static; /* Stack sayings vertically on mobile to avoid overlap */
+                margin: 10px 0;
+                transform: rotate(0deg); /* No angle on mobile */
+            }
+            .saying:nth-child(odd) {
+                text-align: left;
+            }
+            .saying:nth-child(even) {
+                text-align: right;
             }
         }
     </style>
