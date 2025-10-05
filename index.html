@@ -45,7 +45,7 @@
         #meme-char {
             width: 250px; /* Smaller image */
             height: auto;
-            filter: blur(25px); /* A bit more blur */
+            filter: blur(25px); /* Blurred again */
             transition: filter 0.5s ease;
         }
         .question-mark {
@@ -124,6 +124,7 @@
         <ul>
             <li>Total Supply: 1,000,000,000 tokens</li>
             <li>Distribution/Liquidity: 100% to LP (locked forever)</li>
+            <li>Marketing/Airdrops: 10% purchased at launch</li>
             <li>Community/Utility: 100% owned by holders</li>
         </ul>
     </div>
@@ -137,6 +138,8 @@
             const now = new Date();
             if (now >= revealTime) {
                 document.getElementById('meme-char').style.filter = 'blur(0px)';
+                const questionMark = document.querySelector('.question-mark');
+                if (questionMark) questionMark.style.display = 'none';
             }
         }
         
