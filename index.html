@@ -37,12 +37,25 @@
         .bright-shade {
             color: #ce93d8; /* Brighter purple to stand out more */
         }
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
         #meme-char {
             width: 250px; /* Smaller image */
             height: auto;
-            filter: blur(0px); /* No blur */
+            filter: blur(25px); /* A bit more blur */
             transition: filter 0.5s ease;
-            margin: 20px 0;
+        }
+        .question-mark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10em;
+            color: #ce93d8; /* Same as tery meme */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         #reveal-text {
             font-size: 1.5em;
@@ -69,8 +82,14 @@
             h2 {
                 font-size: 2em; /* Smaller on mobile */
             }
+            .image-container {
+                margin: 10px 0;
+            }
             #meme-char {
                 width: 150px; /* Smaller image to fit better */
+            }
+            .question-mark {
+                font-size: 6em; /* Adjust for mobile */
             }
             .tokenomics {
                 font-size: 1em; /* Adjust text */
@@ -95,13 +114,16 @@
 <body>
     <h2><span class="white-shade">MONAD MYS</span><span class="bright-shade">TERY MEME</span></h2>
     <h1>$?????</h1>
-    <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
-    <div id="reveal-text">Reveal Coming Soon!</div>
+    <div class="image-container">
+        <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
+        <span class="question-mark">?</span>
+    </div>
+    <div id="reveal-text">Reveal and Launch Coming Soon!</div>
     
     <div class="tokenomics">
         <ul>
             <li>Total Supply: 1,000,000,000 tokens</li>
-            <li>Distribution/Liquidity: 90% to LP (locked forever), 10% for marketing/airdrops</li>
+            <li>Distribution/Liquidity: 100% to LP (locked forever)</li>
             <li>Community/Utility: 100% owned by holders</li>
         </ul>
     </div>
