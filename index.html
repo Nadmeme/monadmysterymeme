@@ -45,7 +45,7 @@
         #meme-char {
             width: 250px; /* Smaller image */
             height: auto;
-            filter: blur(25px); /* Blurred again */
+            filter: blur(25px); /* Blurred */
             transition: filter 0.5s ease;
         }
         .question-mark {
@@ -129,22 +129,5 @@
         </ul>
     </div>
     
-    <script>
-        // Set your launch date (example: October 9, 2025, 00:00 UTC)
-        const launchDate = new Date('2025-10-09T00:00:00Z');
-        const revealTime = new Date(launchDate.getTime() - 24 * 60 * 60 * 1000); // 24 hours before
-        
-        function updateReveal() {
-            const now = new Date();
-            if (now >= revealTime) {
-                document.getElementById('meme-char').style.filter = 'blur(0px)';
-                const questionMark = document.querySelector('.question-mark');
-                if (questionMark) questionMark.style.display = 'none';
-            }
-        }
-        
-        setInterval(updateReveal, 1000);
-        updateReveal(); // Initial call
-    </script>
 </body>
 </html>
