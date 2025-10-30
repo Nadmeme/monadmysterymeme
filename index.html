@@ -37,25 +37,13 @@
         .bright-shade {
             color: #ce93d8; /* Brighter purple to stand out more */
         }
-        .image-container {
-            position: relative;
-            display: inline-block;
-            margin: 20px 0;
-        }
         #meme-char {
             width: 250px; /* Smaller image */
             height: auto;
-            filter: blur(25px); /* Blurred */
+            filter: blur(25px) !important; /* Force blur */
             transition: filter 0.5s ease;
-        }
-        .question-mark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 10em;
-            color: #ce93d8; /* Same as tery meme */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 20px 0;
+            cursor: pointer; /* Shows it's clickable */
         }
         #reveal-text {
             font-size: 1.5em;
@@ -82,14 +70,8 @@
             h2 {
                 font-size: 2em; /* Smaller on mobile */
             }
-            .image-container {
-                margin: 10px 0;
-            }
             #meme-char {
                 width: 150px; /* Smaller image to fit better */
-            }
-            .question-mark {
-                font-size: 6em; /* Adjust for mobile */
             }
             .tokenomics {
                 font-size: 1em; /* Adjust text */
@@ -114,20 +96,33 @@
 <body>
     <h2><span class="white-shade">MONAD MYS</span><span class="bright-shade">TERY MEME</span></h2>
     <h1>$?????</h1>
-    <div class="image-container">
+    <a href="bio.html">
         <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
-        <span class="question-mark">?</span>
-    </div>
+    </a>
     <div id="reveal-text">Reveal and Launch Coming Soon!</div>
     
     <div class="tokenomics">
         <ul>
             <li>Total Supply: 1,000,000,000 tokens</li>
             <li>Distribution/Liquidity: 100% to LP (locked forever)</li>
-            <li>Marketing/Airdrops: 10% purchased at launch</li>
             <li>Community/Utility: 100% owned by holders</li>
         </ul>
     </div>
     
+    <script>
+        // Set your launch date (example: October 9, 2025, 00:00 UTC)
+        const launchDate = new Date('2025-10-09T00:00:00Z');
+        const revealTime = new Date(launchDate.getTime() - 24 * 60 * 60 * 1000); // 24 hours before
+        
+        function updateReveal() {
+            const now = new Date();
+            if (now >= revealTime) {
+                document.getElementById('meme-char').style.filter = 'blur(0px)';
+            }
+        }
+        
+        setInterval(updateReveal, 1000);
+        updateReveal(); // Initial call
+    </script>
 </body>
 </html>
