@@ -8,42 +8,56 @@
     <style>
         body {
             font-family: 'Luckiest Guy', cursive;
-            background-color: #6a1b9a; /* Purple like in the image */
-            color: #e1bee7; /* Light purple text */
+            background-color: #6a1b9a;
+            color: #e1bee7;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh; /* Better for mobile */
+            min-height: 100vh;
             text-align: center;
-            position: relative; /* For positioning sayings */
+            position: relative;
         }
         h1 {
             font-size: 6em;
             margin: 0;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* 3D shadow effect */
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
             letter-spacing: 2px;
         }
         h2 {
             font-size: 4em;
-            margin: 20px 0 10px 0; /* Further down */
+            margin: 20px 0 10px 0;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
         .white-shade {
-            color: #ffffff; /* White color */
+            color: #ffffff;
         }
         .bright-shade {
-            color: #ce93d8; /* Brighter purple to stand out more */
+            color: #ce93d8;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
         }
         #meme-char {
-            width: 250px; /* Smaller image */
+            width: 250px;
             height: auto;
-            filter: blur(25px) !important; /* Force blur */
+            filter: blur(25px) !important;
             transition: filter 0.5s ease;
-            margin: 20px 0;
-            cursor: pointer; /* Shows it's clickable */
+            cursor: pointer;
+        }
+        .click-to-reveal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8em;
+            color: #e1bee7; /* Light purple */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            pointer-events: none;
         }
         #reveal-text {
             font-size: 1.5em;
@@ -52,7 +66,7 @@
         .tokenomics {
             font-size: 1.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-top: 10px; /* Further up */
+            margin-top: 10px;
         }
         .tokenomics ul {
             list-style: none;
@@ -62,57 +76,42 @@
         .tokenomics li {
             margin: 5px 0;
         }
-        /* Improved media queries for mobile responsiveness */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 3em; /* Smaller on mobile */
-            }
-            h2 {
-                font-size: 2em; /* Smaller on mobile */
-            }
-            #meme-char {
-                width: 150px; /* Smaller image to fit better */
-            }
-            .tokenomics {
-                font-size: 1em; /* Adjust text */
-            }
-            #reveal-text {
-                font-size: 1em;
-            }
-            .saying {
-                position: static; /* Stack sayings vertically on mobile to avoid overlap */
-                margin: 10px 0;
-                transform: rotate(0deg); /* No angle on mobile */
-            }
-            .saying:nth-child(odd) {
-                text-align: left;
-            }
-            .saying:nth-child(even) {
-                text-align: right;
-            }
+            h1 { font-size: 3em; }
+            h2 { font-size: 2em; }
+            .image-container { margin: 10px 0; }
+            #meme-char { width: 150px; }
+            .click-to-reveal { font-size: 1.2em; }
+            .tokenomics { font-size: 1em; }
+            #reveal-text { font-size: 1em; }
         }
     </style>
 </head>
 <body>
     <h2><span class="white-shade">MONAD MYS</span><span class="bright-shade">TERY MEME</span></h2>
     <h1>$?????</h1>
-    <a href="bio.html">
-        <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
-    </a>
+
+    <div class="image-container">
+        <a href="reveal.html">
+            <img id="meme-char" src="https://i.ibb.co/ksMFFLgx/Gemini-Generated-Image-7s3l7e7s3l7e7s3l-1.png" alt="Mystery Meme Character">
+        </a>
+        <div class="click-to-reveal">Click to Reveal!</div>
+    </div>
+
     <div id="reveal-text">Reveal and Launch Coming Soon!</div>
     
     <div class="tokenomics">
         <ul>
             <li>Total Supply: 1,000,000,000 tokens</li>
             <li>Distribution/Liquidity: 100% to LP (locked forever)</li>
+            <li>Marketing/Airdrops: 10% purchased at launch</li>
             <li>Community/Utility: 100% owned by holders</li>
         </ul>
     </div>
     
     <script>
-        // Set your launch date (example: October 9, 2025, 00:00 UTC)
         const launchDate = new Date('2025-10-09T00:00:00Z');
-        const revealTime = new Date(launchDate.getTime() - 24 * 60 * 60 * 1000); // 24 hours before
+        const revealTime = new Date(launchDate.getTime() - 24 * 60 * 60 * 1000);
         
         function updateReveal() {
             const now = new Date();
@@ -122,7 +121,7 @@
         }
         
         setInterval(updateReveal, 1000);
-        updateReveal(); // Initial call
+        updateReveal();
     </script>
 </body>
 </html>
